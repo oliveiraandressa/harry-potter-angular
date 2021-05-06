@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+
+.bg-brown {
+    background-color: #201a12
+}
+
+.bg-darker {
+    background-color: #140f08
+}
+
+.bg-black {
+    background-color: #000
+}
+
+body {
+    background-image: url('./assets/images/bg-4.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container-b {
+    border-radius: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.logo-house {
+    min-height: 200px;
+    max-height: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.main-pic {
+    max-height: 150px;
+}
+
+.logo-house:hover {
+    height: 110%;
+}
+
+.card-dark {
+    background-color: rgba(9, 15, 35, 0.3);
+    color: #fff
+}
+
+.router-link-active {
+    font-weight: bold;
+    border-bottom: 3px solid #0f183c;
+    color: #fff;
+}

@@ -1,0 +1,49 @@
+<div class="container bg-black container-b">
+    <div class="row">
+        <div class="col-sm-3 text-center">
+            <img src="{{houseImage}}" class="my-4 mx-2 img-fluid" />
+            <h2 class="text-capitalize text-white my-2">{{casa}}</h2>
+            <a class="btn btn-outline-light btn-block" [ngClass]="{'active' : filterP == 'todos'}" (click)="setfilterP('todos')">Todos</a>
+            <a class="btn btn-outline-light btn-block " [ngClass]="{'active' : filterP == 'alunos'}" (click)="setfilterP('alunos')">Alunos</a>
+            <a class="btn btn-outline-light btn-block" [ngClass]="{'active' : filterP == 'staff'}" (click)="setfilterP('staff')">Staff</a>
+        </div>
+        <div class="col-sm-9 container-fluid">
+            <div class="row">
+                <div *ngFor="let person of peopleFiltered" class="col-sm-6">
+
+                    <div class="card my-2 container-fluid card-dark">
+
+                        <div class="card-body row">
+                            <div class="col-sm-6 text-center">
+                                <img class="img-fluid rounded-circle main-pic" src="{{person.image}}" alt="Foto de {{person.name}}">
+                            </div>
+                            <div class="col-sm-6 text-center">
+
+                                <h5 class="card-title">{{person.name}}</h5>
+
+
+                                <p class="card-text">
+                                    <small class="text-muted" *ngIf="person.dateOfBirth != ''"><strong>Nascimento:</strong> <br>{{person.dateOfBirth}}</small> <br>
+
+                                    <span class="badge badge-success" *ngIf="person.ancestry =='half-blood'">Puro-sangue</span>
+                                    <span class="badge badge-warning" *ngIf="person.ancestry =='pure-blood'">Mestiço</span>
+                                    <span class="badge badge-danger" *ngIf="person.ancestry =='muggleborn'">Nascido-trouxa</span>
+                                    <br>
+                                    <span class="badge badge-danger" *ngIf="!person.alive">Falecido</span>
+                                </p>
+                            </div>
+                            <div class="col-sm-12 text-left">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-12 text-white text-center" *ngIf="peopleFiltered.length == 0">
+                    <br><br> Não há resgistros.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
